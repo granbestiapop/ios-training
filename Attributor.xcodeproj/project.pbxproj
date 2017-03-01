@@ -15,6 +15,7 @@
 		14FEA8421E607B3800F02393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FEA8401E607B3800F02393 /* LaunchScreen.storyboard */; };
 		14FEA84D1E607B3800F02393 /* AttributorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA84C1E607B3800F02393 /* AttributorTests.m */; };
 		14FEA8581E607B3800F02393 /* AttributorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8571E607B3800F02393 /* AttributorUITests.m */; };
+		14FEA8671E60E1FD00F02393 /* TabbedControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8661E60E1FD00F02393 /* TabbedControllerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		14FEA8531E607B3800F02393 /* AttributorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AttributorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FEA8571E607B3800F02393 /* AttributorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttributorUITests.m; sourceTree = "<group>"; };
 		14FEA8591E607B3800F02393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14FEA8651E60E1FD00F02393 /* TabbedControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbedControllerViewController.h; sourceTree = "<group>"; };
+		14FEA8661E60E1FD00F02393 /* TabbedControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbedControllerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				14FEA8401E607B3800F02393 /* LaunchScreen.storyboard */,
 				14FEA8431E607B3800F02393 /* Info.plist */,
 				14FEA8321E607B3800F02393 /* Supporting Files */,
+				14FEA8651E60E1FD00F02393 /* TabbedControllerViewController.h */,
+				14FEA8661E60E1FD00F02393 /* TabbedControllerViewController.m */,
 			);
 			path = Attributor;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14FEA8671E60E1FD00F02393 /* TabbedControllerViewController.m in Sources */,
 				14FEA83A1E607B3800F02393 /* ViewController.m in Sources */,
 				14FEA8371E607B3800F02393 /* AppDelegate.m in Sources */,
 				14FEA8341E607B3800F02393 /* main.m in Sources */,
