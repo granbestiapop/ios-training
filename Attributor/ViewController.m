@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "StatsController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *body;
@@ -16,20 +17,17 @@
 @end
 
 @implementation ViewController
-- (IBAction)onTapChangeColor:(UIButton *)sender
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [self.body.textStorage addAttribute:NSForegroundColorAttributeName value:sender.backgroundColor range:[self.body selectedRange]];
+    // We use segue instantiate the controller and bind vars to controller
+    if([segue.identifier isEqualToString:@"text_stats"]){
+        if([segue.destinationViewController isKindOfClass: [StatsController class]]){
+            StatsController * sController = (StatsController *)segue.destinationViewController;
+            sController.textToAnalyze = self.body.textStorage;
+        }
+    }
 }
-
-- (IBAction)onTapOutline
-{
-    [self.body.textStorage setAttributes:@{NSStrokeWidthAttributeName: @-3, NSStrokeColorAttributeName: [UIColor blackColor]} range:self.body.selectedRange];
-}
-
-- (IBAction)onTapUnoutline {
-    [self.body.textStorage removeAttribute:NSStrokeWidthAttributeName range:self.body.selectedRange];
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,6 +52,21 @@
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIContentSizeCategoryDidChangeNotification object:nil];
 }
+
+- (IBAction)onTapChangeColor:(UIButton *)sender
+{
+    [self.body.textStorage addAttribute:NSForegroundColorAttributeName value:sender.backgroundColor range:[self.body selectedRange]];
+}
+
+- (IBAction)onTapOutline
+{
+    [self.body.textStorage setAttributes:@{NSStrokeWidthAttributeName: @-3, NSStrokeColorAttributeName: [UIColor blackColor]} range:self.body.selectedRange];
+}
+
+- (IBAction)onTapUnoutline {
+    [self.body.textStorage removeAttribute:NSStrokeWidthAttributeName range:self.body.selectedRange];
+}
+
 
 - (void) preferredFontChanged: (NSNotification *)notification
 {

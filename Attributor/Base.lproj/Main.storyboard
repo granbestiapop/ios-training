@@ -83,7 +83,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Colorize text" id="kNa-9u-2s8"/>
+                    <navigationItem key="navigationItem" title="Colorize text" id="kNa-9u-2s8">
+                        <barButtonItem key="rightBarButtonItem" title="Stats" id="cgv-Di-f2i">
+                            <connections>
+                                <segue destination="rEW-z4-TCa" kind="show" identifier="text_stats" id="OcF-mK-g9C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="body" destination="NhZ-e3-VIh" id="hMt-cO-foA"/>
                         <outlet property="header" destination="9wW-gQ-LDy" id="7NJ-lx-Kwm"/>
@@ -92,7 +98,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130.625" y="135.21126760563379"/>
+            <point key="canvasLocation" x="928" y="134"/>
+        </scene>
+        <!--Stats Controller-->
+        <scene sceneID="cYk-9K-L5e">
+            <objects>
+                <viewController id="rEW-z4-TCa" customClass="StatsController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kMc-qR-Y4n"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gy2-N9-Ynl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3aY-t4-Knh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 colored text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYw-jj-YFx">
+                                <rect key="frame" x="42" y="86" width="106" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 outlined text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQ9-w5-UJU">
+                                <rect key="frame" x="42" y="115" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="coloredLabel" destination="CYw-jj-YFx" id="Atd-ZN-oVJ"/>
+                        <outlet property="outlinedLabel" destination="sQ9-w5-UJU" id="9E5-E1-QLD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bGe-hK-mYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866" y="135"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="psy-Gr-2fF">
