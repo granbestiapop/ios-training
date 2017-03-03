@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SfW-ZK-JK2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6pc-dU-d27">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Zlg-L6-DXP">
+            <objects>
+                <tabBarController id="6pc-dU-d27" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yqN-fV-wqc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="SfW-ZK-JK2" kind="relationship" relationship="viewControllers" id="rHS-PE-UFz"/>
+                        <segue destination="rEW-z4-TCa" kind="relationship" relationship="viewControllers" id="Z46-JR-ZRO"/>
+                        <segue destination="vyR-rx-dno" kind="relationship" relationship="viewControllers" id="UC2-SL-Rzh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nxG-Zn-MV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="-720"/>
+        </scene>
         <!--Colorize text-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -83,13 +102,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Colorize text" id="kNa-9u-2s8">
-                        <barButtonItem key="rightBarButtonItem" title="Stats" id="cgv-Di-f2i">
-                            <connections>
-                                <segue destination="rEW-z4-TCa" kind="show" identifier="text_stats" id="OcF-mK-g9C"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Colorize text" id="kNa-9u-2s8"/>
                     <connections>
                         <outlet property="body" destination="NhZ-e3-VIh" id="hMt-cO-foA"/>
                         <outlet property="header" destination="9wW-gQ-LDy" id="7NJ-lx-Kwm"/>
@@ -100,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="928" y="134"/>
         </scene>
-        <!--Stats Controller-->
+        <!--Stats-->
         <scene sceneID="cYk-9K-L5e">
             <objects>
                 <viewController id="rEW-z4-TCa" customClass="StatsController" sceneMemberID="viewController">
@@ -126,22 +139,68 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPW-Hc-LSa">
+                                <rect key="frame" x="40" y="196" width="240" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Stats" id="q6F-eU-uIO"/>
                     <connections>
                         <outlet property="coloredLabel" destination="CYw-jj-YFx" id="Atd-ZN-oVJ"/>
+                        <outlet property="gestureView" destination="LPW-Hc-LSa" id="ckf-jE-vmL"/>
                         <outlet property="outlinedLabel" destination="sQ9-w5-UJU" id="9E5-E1-QLD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGe-hK-mYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866" y="135"/>
+            <point key="canvasLocation" x="1865.625" y="134.1549295774648"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Playing Cad-->
+        <scene sceneID="7Vg-91-gak">
+            <objects>
+                <viewController id="vyR-rx-dno" customClass="CardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VAG-8j-RPC"/>
+                        <viewControllerLayoutGuide type="bottom" id="g29-IY-Po6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4rK-Kf-PsQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ke2-3c-ESN" customClass="PlayingCardView">
+                                <rect key="frame" x="59" y="69" width="196" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SL9-va-Gz1" appends="YES" id="9WZ-W1-0q3"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18351756987341672" green="0.41316105769230771" blue="0.12122011482964901" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Playing Cad" id="s63-qb-6Gu"/>
+                    <connections>
+                        <outlet property="playingCard" destination="ke2-3c-ESN" id="Auc-BJ-Ku1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w0G-Tg-mN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="SL9-va-Gz1">
+                    <connections>
+                        <action selector="swipe:" destination="vyR-rx-dno" id="dDk-zv-Dz8"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2726.25" y="134.1549295774648"/>
+        </scene>
+        <!--Colorize-->
         <scene sceneID="psy-Gr-2fF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SfW-ZK-JK2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Colorize" id="4PG-TP-x2d"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bnz-if-u1d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

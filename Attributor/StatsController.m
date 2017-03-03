@@ -7,10 +7,12 @@
 //
 
 #import "StatsController.h"
+#import "ViewController.h"
 
 @interface StatsController ()
 @property (weak, nonatomic) IBOutlet UILabel *coloredLabel;
 @property (weak, nonatomic) IBOutlet UILabel *outlinedLabel;
+@property (weak, nonatomic) IBOutlet UIView *gestureView;
 
 @end
 
@@ -54,6 +56,39 @@
     }
     
     return characters;
+}
+
+-(void) viewDidLoad
+{
+    [self refreshStats];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self refreshStats];
+}
+
+- (void) refreshStats {
+    NSLog(@"Did appear view controller");
+    NSArray * controllers = [self.tabBarController viewControllers];
+    UINavigationController *uiViewController = (UINavigationController *)controllers[0];
+    ViewController * viewController = (ViewController *)[uiViewController.childViewControllers firstObject];
+    NSTextStorage * text = [viewController.getBody textStorage];
+    self.textToAnalyze = text;
+}
+
+
+- (void) setPannableView: (UIView *) view
+{
+
+    UIPanGestureRecognizer * gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self.gestureView action:@selector(logPan:)];
+    
+    [self.gestureView addGestureRecognizer: gesture];
+}
+
+- (void) logPan{
+    
 }
 
 @end

@@ -16,6 +16,8 @@
 		14FEA84D1E607B3800F02393 /* AttributorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA84C1E607B3800F02393 /* AttributorTests.m */; };
 		14FEA8581E607B3800F02393 /* AttributorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8571E607B3800F02393 /* AttributorUITests.m */; };
 		14FEA86A1E67208900F02393 /* StatsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8691E67208900F02393 /* StatsController.m */; };
+		14FEA86D1E6857E500F02393 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA86C1E6857E500F02393 /* CardViewController.m */; };
+		14FEA8701E6858AB00F02393 /* PlayingCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA86F1E6858AB00F02393 /* PlayingCardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		14FEA8591E607B3800F02393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14FEA8681E67208900F02393 /* StatsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsController.h; sourceTree = "<group>"; };
 		14FEA8691E67208900F02393 /* StatsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsController.m; sourceTree = "<group>"; };
+		14FEA86B1E6857E500F02393 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		14FEA86C1E6857E500F02393 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
+		14FEA86E1E6858AB00F02393 /* PlayingCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardView.h; sourceTree = "<group>"; };
+		14FEA86F1E6858AB00F02393 /* PlayingCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +110,6 @@
 		14FEA8311E607B3800F02393 /* Attributor */ = {
 			isa = PBXGroup;
 			children = (
-				14FEA8351E607B3800F02393 /* AppDelegate.h */,
-				14FEA8361E607B3800F02393 /* AppDelegate.m */,
 				14FEA8381E607B3800F02393 /* ViewController.h */,
 				14FEA8391E607B3800F02393 /* ViewController.m */,
 				14FEA83B1E607B3800F02393 /* Main.storyboard */,
@@ -115,6 +119,10 @@
 				14FEA8321E607B3800F02393 /* Supporting Files */,
 				14FEA8681E67208900F02393 /* StatsController.h */,
 				14FEA8691E67208900F02393 /* StatsController.m */,
+				14FEA86B1E6857E500F02393 /* CardViewController.h */,
+				14FEA86C1E6857E500F02393 /* CardViewController.m */,
+				14FEA86E1E6858AB00F02393 /* PlayingCardView.h */,
+				14FEA86F1E6858AB00F02393 /* PlayingCardView.m */,
 			);
 			path = Attributor;
 			sourceTree = "<group>";
@@ -122,6 +130,8 @@
 		14FEA8321E607B3800F02393 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				14FEA8351E607B3800F02393 /* AppDelegate.h */,
+				14FEA8361E607B3800F02393 /* AppDelegate.m */,
 				14FEA8331E607B3800F02393 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -278,6 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14FEA86D1E6857E500F02393 /* CardViewController.m in Sources */,
+				14FEA8701E6858AB00F02393 /* PlayingCardView.m in Sources */,
 				14FEA83A1E607B3800F02393 /* ViewController.m in Sources */,
 				14FEA8371E607B3800F02393 /* AppDelegate.m in Sources */,
 				14FEA8341E607B3800F02393 /* main.m in Sources */,

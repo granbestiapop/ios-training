@@ -18,15 +18,9 @@
 
 @implementation ViewController
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // We use segue instantiate the controller and bind vars to controller
-    if([segue.identifier isEqualToString:@"text_stats"]){
-        if([segue.destinationViewController isKindOfClass: [StatsController class]]){
-            StatsController * sController = (StatsController *)segue.destinationViewController;
-            sController.textToAnalyze = self.body.textStorage;
-        }
-    }
+    // nothing here
 }
 
 - (void)viewDidLoad {
@@ -77,7 +71,12 @@
 {
     self.body.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     self.header.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-    
+}
+
+
+- (UITextView *) getBody
+{
+    return self.body;
 }
 
 @end
