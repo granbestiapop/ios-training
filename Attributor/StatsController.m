@@ -70,7 +70,6 @@
 }
 
 - (void) refreshStats {
-    NSLog(@"Did appear view controller");
     NSArray * controllers = [self.tabBarController viewControllers];
     UINavigationController *uiViewController = (UINavigationController *)controllers[0];
     ViewController * viewController = (ViewController *)[uiViewController.childViewControllers firstObject];
