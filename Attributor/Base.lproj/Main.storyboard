@@ -129,6 +129,7 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="723-eZ-egE" appends="YES" id="hzG-eZ-PYG"/>
+                            <outletCollection property="gestureRecognizers" destination="H7h-ws-Z6Y" appends="YES" id="jQ3-dC-oHp"/>
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Animations" id="Gk7-Gl-Bdi"/>
@@ -142,6 +143,11 @@
                         <action selector="tap:" destination="F84-n4-yrX" id="CcN-vo-nkq"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="H7h-ws-Z6Y">
+                    <connections>
+                        <action selector="panGesture:" destination="F84-n4-yrX" id="XfQ-H7-8mo"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1252.5" y="-720.42253521126759"/>
         </scene>

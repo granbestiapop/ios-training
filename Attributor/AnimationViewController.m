@@ -7,13 +7,15 @@
 //
 
 #import "AnimationViewController.h"
+#import "CustomBehavior.h"
 
-@interface AnimationViewController ()
+@interface AnimationViewController ()<UIDynamicAnimatorDelegate>
 @property (strong, nonatomic) IBOutlet UIView *animationView;
 @property (nonatomic, strong) UIDynamicAnimator *animator;
-@property (nonatomic, strong) UIGravityBehavior *gravity;
-@property (nonatomic, strong) UICollisionBehavior *collision;
+@property (nonatomic, strong) UIAttachmentBehavior *attachment;
 
+@property (nonatomic, strong) CustomBehavior *behavior;
+@property (nonatomic, strong) UIView *droppingView;
 
 @end
 
@@ -21,34 +23,28 @@
 
 static const CGSize DROP_SIZE = {40,40};
 
+
+
+
 #pragma mark - Initializers
 
 - (UIDynamicAnimator *) animator
 {
     if(!_animator){
         _animator = [[UIDynamicAnimator alloc] initWithReferenceView: self.animationView];
+        _animator.delegate = self;
+        
     }
     return _animator;
 }
 
-- (UIGravityBehavior*) gravity
+- (CustomBehavior*) behavior
 {
-    if(!_gravity){
-        _gravity = [[UIGravityBehavior alloc] init];
-        _gravity.magnitude = 0.9;
-        [self.animator addBehavior:_gravity];
+    if(!_behavior){
+        _behavior = [[CustomBehavior alloc] init];
+        [self.animator addBehavior:_behavior];
     }
-    return _gravity;
-}
-
-- (UICollisionBehavior*) collision
-{
-    if(!_collision){
-        _collision = [[UICollisionBehavior alloc] init];
-        _collision.translatesReferenceBoundsIntoBoundary = YES;
-        [self.animator addBehavior:_collision];
-    }
-    return _collision;
+    return _behavior;
 }
 
 
@@ -69,12 +65,36 @@ static const CGSize DROP_SIZE = {40,40};
     
     UIView * view = [[UIView alloc] initWithFrame:frame];
     view.backgroundColor = [UIColor redColor];
-    [self.animationView addSubview:view];
     
-    [self.gravity addItem:view];
-    [self.collision addItem:view];
+    // Add view
+    [self.animationView addSubview:view];
+    // Add animation
+    [self.behavior addItem:view];
+
+    // Have a reference to last object
+    self.droppingView = view;
 }
 
+- (IBAction)panGesture:(UIPanGestureRecognizer *)sender {
+    CGPoint gesturePoint = [sender locationInView:self.view];
+    
+    if(sender.state == UIGestureRecognizerStateBegan){
+        [self attachDroppingToPoint:gesturePoint];
+    } else if(sender.state == UIGestureRecognizerStateChanged){
+        self.attachment.anchorPoint = gesturePoint;
+    } else if(sender.state == UIGestureRecognizerStateEnded){
+        [self.animator removeBehavior:self.attachment];
+    }
+}
+
+- (void) attachDroppingToPoint: (CGPoint)point{
+    if(self.droppingView){
+        self.attachment = [[UIAttachmentBehavior alloc]initWithItem:self.droppingView attachedToAnchor:point];
+        self.droppingView = nil;
+        [self.animator addBehavior:self.attachment];
+        
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

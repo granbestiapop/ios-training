@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomBehavior : UIDynamicBehavior
+- (void) addItem: (id <UIDynamicItem>) item;
+- (void) removeItem: (id <UIDynamicItem>) item;
 
 @end
