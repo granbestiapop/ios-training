@@ -119,9 +119,6 @@
     [self setup];
 }
 
-+(void) animation{
-    [self transitionWithView:self duration:3.0 options:UIViewAnimationOptionTransitionFlipFromRight animations:<#^(void)animations#> completion:<#^(BOOL finished)completion#>]
-}
 
 -(void) setFaceUp:(BOOL)faceUp
 {

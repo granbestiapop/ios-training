@@ -22,6 +22,7 @@
                         <segue destination="SfW-ZK-JK2" kind="relationship" relationship="viewControllers" id="rHS-PE-UFz"/>
                         <segue destination="rEW-z4-TCa" kind="relationship" relationship="viewControllers" id="Z46-JR-ZRO"/>
                         <segue destination="vyR-rx-dno" kind="relationship" relationship="viewControllers" id="UC2-SL-Rzh"/>
+                        <segue destination="F84-n4-yrX" kind="relationship" relationship="viewControllers" id="gwc-2l-MRh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxG-Zn-MV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,6 +113,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928" y="134"/>
+        </scene>
+        <!--Animations-->
+        <scene sceneID="IVo-RC-xe1">
+            <objects>
+                <viewController id="F84-n4-yrX" customClass="AnimationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VVU-wo-BNB"/>
+                        <viewControllerLayoutGuide type="bottom" id="NSS-GJ-ekK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O5A-eg-OX0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="723-eZ-egE" appends="YES" id="hzG-eZ-PYG"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Animations" id="Gk7-Gl-Bdi"/>
+                    <connections>
+                        <outlet property="animationView" destination="O5A-eg-OX0" id="prg-id-YTs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MUD-1i-Fw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="723-eZ-egE">
+                    <connections>
+                        <action selector="tap:" destination="F84-n4-yrX" id="CcN-vo-nkq"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1252.5" y="-720.42253521126759"/>
         </scene>
         <!--Stats-->
         <scene sceneID="cYk-9K-L5e">

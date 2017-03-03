@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1450E07E1E69BBA900AB91FF /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450E07D1E69BBA900AB91FF /* AnimationViewController.m */; };
+		1450E0811E69C66B00AB91FF /* CustomBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450E0801E69C66B00AB91FF /* CustomBehavior.m */; };
 		14FEA8341E607B3800F02393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8331E607B3800F02393 /* main.m */; };
 		14FEA8371E607B3800F02393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8361E607B3800F02393 /* AppDelegate.m */; };
 		14FEA83A1E607B3800F02393 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8391E607B3800F02393 /* ViewController.m */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1450E07C1E69BBA900AB91FF /* AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
+		1450E07D1E69BBA900AB91FF /* AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
+		1450E07F1E69C66B00AB91FF /* CustomBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBehavior.h; sourceTree = "<group>"; };
+		1450E0801E69C66B00AB91FF /* CustomBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBehavior.m; sourceTree = "<group>"; };
 		14FEA82F1E607B3800F02393 /* Attributor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attributor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FEA8331E607B3800F02393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14FEA8351E607B3800F02393 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +129,10 @@
 				14FEA86C1E6857E500F02393 /* CardViewController.m */,
 				14FEA86E1E6858AB00F02393 /* PlayingCardView.h */,
 				14FEA86F1E6858AB00F02393 /* PlayingCardView.m */,
+				1450E07C1E69BBA900AB91FF /* AnimationViewController.h */,
+				1450E07D1E69BBA900AB91FF /* AnimationViewController.m */,
+				1450E07F1E69C66B00AB91FF /* CustomBehavior.h */,
+				1450E0801E69C66B00AB91FF /* CustomBehavior.m */,
 			);
 			path = Attributor;
 			sourceTree = "<group>";
@@ -290,9 +300,11 @@
 			files = (
 				14FEA86D1E6857E500F02393 /* CardViewController.m in Sources */,
 				14FEA8701E6858AB00F02393 /* PlayingCardView.m in Sources */,
+				1450E07E1E69BBA900AB91FF /* AnimationViewController.m in Sources */,
 				14FEA83A1E607B3800F02393 /* ViewController.m in Sources */,
 				14FEA8371E607B3800F02393 /* AppDelegate.m in Sources */,
 				14FEA8341E607B3800F02393 /* main.m in Sources */,
+				1450E0811E69C66B00AB91FF /* CustomBehavior.m in Sources */,
 				14FEA86A1E67208900F02393 /* StatsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +537,7 @@
 				14FEA85E1E607B3800F02393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14FEA85F1E607B3800F02393 /* Build configuration list for PBXNativeTarget "AttributorTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +546,7 @@
 				14FEA8611E607B3800F02393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14FEA8621E607B3800F02393 /* Build configuration list for PBXNativeTarget "AttributorUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +555,7 @@
 				14FEA8641E607B3800F02393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
