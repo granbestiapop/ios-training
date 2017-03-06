@@ -25,6 +25,7 @@
                         <segue destination="vyR-rx-dno" kind="relationship" relationship="viewControllers" id="UC2-SL-Rzh"/>
                         <segue destination="F84-n4-yrX" kind="relationship" relationship="viewControllers" id="gwc-2l-MRh"/>
                         <segue destination="iMd-LV-pBn" kind="relationship" relationship="viewControllers" id="Rhg-G0-yZk"/>
+                        <segue destination="HfP-UU-VfI" kind="relationship" relationship="viewControllers" id="CdE-vi-ssG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxG-Zn-MV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,6 +268,94 @@
             </objects>
             <point key="canvasLocation" x="3410.625" y="138.38028169014083"/>
         </scene>
+        <!--imaginariom-->
+        <scene sceneID="qq3-s7-mYj">
+            <objects>
+                <viewController id="HfP-UU-VfI" customClass="imageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z8c-oQ-UrE"/>
+                        <viewControllerLayoutGuide type="bottom" id="cgN-bp-28O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lEh-fI-gJY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpq-dj-xMe">
+                                <rect key="frame" x="134.5" y="269" width="51" height="30"/>
+                                <state key="normal" title="image2"/>
+                                <connections>
+                                    <segue destination="MQV-wp-K6g" kind="show" identifier="photo_2" id="yuQ-tV-x4V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVq-CY-WzH">
+                                <rect key="frame" x="135.5" y="231" width="49" height="30"/>
+                                <state key="normal" title="image1"/>
+                                <connections>
+                                    <segue destination="MQV-wp-K6g" kind="show" identifier="photo_1" id="ZdR-nH-w52"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCv-YF-lhd">
+                                <rect key="frame" x="134.5" y="307" width="51" height="30"/>
+                                <state key="normal" title="image3"/>
+                                <connections>
+                                    <segue destination="MQV-wp-K6g" kind="show" identifier="photo_3" id="ZTD-KF-0aK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oVq-CY-WzH" firstAttribute="centerX" secondItem="Mpq-dj-xMe" secondAttribute="centerX" id="9R7-Zh-AaI"/>
+                            <constraint firstItem="oVq-CY-WzH" firstAttribute="centerX" secondItem="YCv-YF-lhd" secondAttribute="centerX" id="XIh-j8-B9B"/>
+                            <constraint firstItem="Mpq-dj-xMe" firstAttribute="centerX" secondItem="lEh-fI-gJY" secondAttribute="centerX" id="fHk-y4-LRV"/>
+                            <constraint firstItem="Mpq-dj-xMe" firstAttribute="centerY" secondItem="lEh-fI-gJY" secondAttribute="centerY" id="ljJ-Rl-r4m"/>
+                            <constraint firstItem="YCv-YF-lhd" firstAttribute="top" secondItem="Mpq-dj-xMe" secondAttribute="bottom" constant="8" id="nWg-xk-C2b"/>
+                            <constraint firstItem="Mpq-dj-xMe" firstAttribute="top" secondItem="oVq-CY-WzH" secondAttribute="bottom" constant="8" id="x6G-vs-nzS"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="imaginariom" id="GWq-Yy-0v5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTM-fR-9nK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-546" y="133"/>
+        </scene>
+        <!--Imaginarium View Controller-->
+        <scene sceneID="R3u-Kd-ia7">
+            <objects>
+                <viewController id="MQV-wp-K6g" customClass="imaginariumViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U1T-6i-eMX"/>
+                        <viewControllerLayoutGuide type="bottom" id="6g0-Fz-DNo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ocM-6C-2ag">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZM-8I-Y2W">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5Cc-Eq-XiM">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="OZM-8I-Y2W" secondAttribute="bottom" id="12B-hw-cET"/>
+                            <constraint firstItem="5Cc-Eq-XiM" firstAttribute="centerY" secondItem="OZM-8I-Y2W" secondAttribute="centerY" id="14b-Ru-D5J"/>
+                            <constraint firstAttribute="trailing" secondItem="OZM-8I-Y2W" secondAttribute="trailing" id="9qc-pz-aiu"/>
+                            <constraint firstItem="5Cc-Eq-XiM" firstAttribute="centerX" secondItem="OZM-8I-Y2W" secondAttribute="centerX" id="Idk-jU-HIp"/>
+                            <constraint firstItem="OZM-8I-Y2W" firstAttribute="top" secondItem="ocM-6C-2ag" secondAttribute="top" id="Xu1-Ys-9A5"/>
+                            <constraint firstItem="OZM-8I-Y2W" firstAttribute="leading" secondItem="ocM-6C-2ag" secondAttribute="leading" id="h8U-xc-boW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="5Cc-Eq-XiM" id="itM-H7-8SW"/>
+                        <outlet property="scrollView" destination="OZM-8I-Y2W" id="Ntt-oT-mwM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VdM-wn-Ylq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-547.5" y="854.57746478873241"/>
+        </scene>
         <!--Colorize-->
         <scene sceneID="psy-Gr-2fF">
             <objects>
@@ -287,4 +376,7 @@
             <point key="canvasLocation" x="133.125" y="135.21126760563379"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZTD-KF-0aK"/>
+    </inferredMetricsTieBreakers>
 </document>
