@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,6 +24,7 @@
                         <segue destination="rEW-z4-TCa" kind="relationship" relationship="viewControllers" id="Z46-JR-ZRO"/>
                         <segue destination="vyR-rx-dno" kind="relationship" relationship="viewControllers" id="UC2-SL-Rzh"/>
                         <segue destination="F84-n4-yrX" kind="relationship" relationship="viewControllers" id="gwc-2l-MRh"/>
+                        <segue destination="iMd-LV-pBn" kind="relationship" relationship="viewControllers" id="Rhg-G0-yZk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxG-Zn-MV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -48,9 +50,8 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfU-C8-i5f">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfU-C8-i5f">
                                 <rect key="frame" x="16" y="410" width="64" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.19526992912505303" blue="0.070074597753982837" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="onTapChangeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yru-P4-QhX"/>
@@ -64,17 +65,15 @@
                                     <action selector="onTapUnoutline" destination="BYZ-38-t0r" eventType="touchUpInside" id="wl3-bF-DXi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oN-hb-2ae">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oN-hb-2ae">
                                 <rect key="frame" x="128" y="410" width="64" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="onTapChangeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Txy-vX-4jg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIr-4S-B02">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIr-4S-B02">
                                 <rect key="frame" x="240" y="410" width="64" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="onTapChangeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DN4-sS-qjk"/>
@@ -102,6 +101,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0oN-hb-2ae" firstAttribute="width" secondItem="bfU-C8-i5f" secondAttribute="width" id="1oZ-oR-1FI"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="bfU-C8-i5f" secondAttribute="leading" id="TMc-Ru-YzH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KIr-4S-B02" secondAttribute="trailing" id="U6S-0R-EIv"/>
+                            <constraint firstItem="KIr-4S-B02" firstAttribute="width" secondItem="bfU-C8-i5f" secondAttribute="width" id="Yvf-Yb-ldb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Colorize text" id="kNa-9u-2s8"/>
                     <connections>
@@ -233,6 +238,34 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2726.25" y="134.1549295774648"/>
+        </scene>
+        <!--scroll-->
+        <scene sceneID="MWQ-aU-S3k">
+            <objects>
+                <viewController id="iMd-LV-pBn" customClass="ScrollViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IcL-SH-mi6"/>
+                        <viewControllerLayoutGuide type="bottom" id="E51-pU-IMj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gUw-wi-yTy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E9v-6g-nvo">
+                                <rect key="frame" x="0.0" y="28" width="320" height="491"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="scroll" id="dJ4-sz-7ES"/>
+                    <connections>
+                        <outlet property="scrollView" destination="E9v-6g-nvo" id="zO3-B1-78e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wSt-c2-Yvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3410.625" y="138.38028169014083"/>
         </scene>
         <!--Colorize-->
         <scene sceneID="psy-Gr-2fF">
