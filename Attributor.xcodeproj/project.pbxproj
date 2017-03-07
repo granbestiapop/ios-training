@@ -12,6 +12,7 @@
 		1450E0841E6A00FC00AB91FF /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450E0831E6A00FC00AB91FF /* ScrollViewController.m */; };
 		1450E0881E6D9E9400AB91FF /* imaginariumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450E0871E6D9E9400AB91FF /* imaginariumViewController.m */; };
 		1450E08B1E6DA5ED00AB91FF /* imageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450E08A1E6DA5ED00AB91FF /* imageViewController.m */; };
+		1450E08F1E6DC47E00AB91FF /* TableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450E08E1E6DC47E00AB91FF /* TableTableViewController.m */; };
 		14FEA8341E607B3800F02393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8331E607B3800F02393 /* main.m */; };
 		14FEA8371E607B3800F02393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8361E607B3800F02393 /* AppDelegate.m */; };
 		14FEA83A1E607B3800F02393 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8391E607B3800F02393 /* ViewController.m */; };
@@ -53,6 +54,8 @@
 		1450E0871E6D9E9400AB91FF /* imaginariumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imaginariumViewController.m; sourceTree = "<group>"; };
 		1450E0891E6DA5ED00AB91FF /* imageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageViewController.h; sourceTree = "<group>"; };
 		1450E08A1E6DA5ED00AB91FF /* imageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageViewController.m; sourceTree = "<group>"; };
+		1450E08D1E6DC47E00AB91FF /* TableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTableViewController.h; sourceTree = "<group>"; };
+		1450E08E1E6DC47E00AB91FF /* TableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTableViewController.m; sourceTree = "<group>"; };
 		14FEA82F1E607B3800F02393 /* Attributor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attributor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FEA8331E607B3800F02393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14FEA8351E607B3800F02393 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +116,15 @@
 			name = imaginarium;
 			sourceTree = "<group>";
 		};
+		1450E08C1E6DC46100AB91FF /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				1450E08D1E6DC47E00AB91FF /* TableTableViewController.h */,
+				1450E08E1E6DC47E00AB91FF /* TableTableViewController.m */,
+			);
+			name = tableview;
+			sourceTree = "<group>";
+		};
 		14FEA8261E607B3700F02393 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +148,7 @@
 		14FEA8311E607B3800F02393 /* Attributor */ = {
 			isa = PBXGroup;
 			children = (
+				1450E08C1E6DC46100AB91FF /* tableview */,
 				1450E0851E6D9E6E00AB91FF /* imaginarium */,
 				14FEA8381E607B3800F02393 /* ViewController.h */,
 				14FEA8391E607B3800F02393 /* ViewController.m */,
@@ -321,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1450E08F1E6DC47E00AB91FF /* TableTableViewController.m in Sources */,
 				1450E0881E6D9E9400AB91FF /* imaginariumViewController.m in Sources */,
 				14FEA86D1E6857E500F02393 /* CardViewController.m in Sources */,
 				14FEA8701E6858AB00F02393 /* PlayingCardView.m in Sources */,
