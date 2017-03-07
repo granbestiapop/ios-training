@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TableTableViewController : UITableViewController
-
+@property(strong, nonatomic) NSArray * recommendations;
 @end

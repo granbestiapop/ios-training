@@ -7,6 +7,7 @@
 //
 
 #import "TableTableViewController.h"
+#import "imaginariumViewController.h"
 
 @interface TableTableViewController ()
 
@@ -16,36 +17,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self fetchRecommendations];
 }
 
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    //#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.recommendations count];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recommendations_table" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSDictionary * recommendation = self.recommendations[indexPath.row];
+    cell.textLabel.text = [recommendation valueForKey:@"description"];
+    cell.detailTextLabel.text = [recommendation valueForKey:@"price"];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -86,14 +83,51 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath * path = [self.tableView indexPathForCell:sender];
     
+    // instrospection
+    if([sender isKindOfClass: [UITableViewCell class]]){
+        NSIndexPath * path = [self.tableView indexPathForCell:sender];
+        imaginariumViewController * ivc = (imaginariumViewController *) segue.destinationViewController;
+        
+        NSDictionary * recommendation = self.recommendations[path.item];
+        NSString *imageUrl = [recommendation valueForKey:@"thumbnail"];
+        ivc.imageUrl= [NSURL URLWithString:imageUrl];
+    }
 }
 
 
 - (IBAction)refresh:(UIRefreshControl *)sender
 {
+    //[self.refreshControl beginRefreshing];
+    [self fetchRecommendations];
     
 }
+
+- (void) fetchRecommendations
+{
+    // animation
+    [self.refreshControl beginRefreshing];
+
+    NSURL *url = [NSURL URLWithString: @"https://frontend.mercadolibre.com/recommendations/users/235789175?client=feedback_congrats&site_id=MLA&category_id=MLA1402&limit=10"];
+
+    
+    // create queue
+    dispatch_queue_t queue = dispatch_queue_create("json_response", NULL);
+    dispatch_async(queue, ^{
+        NSData *jsonResult = [NSData dataWithContentsOfURL:url];
+        NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:jsonResult options:0 error:NULL];
+        
+        // this dispatch job async
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // strong
+            self.recommendations = [dic valueForKeyPath:@"recommendation_info.recommendations"];
+            NSLog(@"%@", self.recommendations);
+            [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+        });
+    });
+
+}
+
 
 @end
