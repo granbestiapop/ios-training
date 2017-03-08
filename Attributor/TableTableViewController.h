@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface TableTableViewController : UITableViewController
+@interface TableTableViewController : UITableViewController<NSFetchedResultsControllerDelegate>
 @property(strong, nonatomic) NSArray * recommendations;
+
+@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @end

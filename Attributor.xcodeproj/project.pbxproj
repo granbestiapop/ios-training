@@ -13,6 +13,10 @@
 		1450E0881E6D9E9400AB91FF /* imaginariumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450E0871E6D9E9400AB91FF /* imaginariumViewController.m */; };
 		1450E08B1E6DA5ED00AB91FF /* imageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450E08A1E6DA5ED00AB91FF /* imageViewController.m */; };
 		1450E08F1E6DC47E00AB91FF /* TableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450E08E1E6DC47E00AB91FF /* TableTableViewController.m */; };
+		14CFB6F41E6F344700F624CE /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14CFB6F21E6F344700F624CE /* DataModel.xcdatamodeld */; };
+		14CFB7331E6F5B1900F624CE /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CFB7311E6F5B1900F624CE /* Photo+CoreDataProperties.m */; };
+		14CFB7391E70607900F624CE /* Recommendation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CFB7371E70607900F624CE /* Recommendation+CoreDataProperties.m */; };
+		14CFB73C1E7060D600F624CE /* Recommendation+operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CFB73B1E7060D600F624CE /* Recommendation+operations.m */; };
 		14FEA8341E607B3800F02393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8331E607B3800F02393 /* main.m */; };
 		14FEA8371E607B3800F02393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8361E607B3800F02393 /* AppDelegate.m */; };
 		14FEA83A1E607B3800F02393 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8391E607B3800F02393 /* ViewController.m */; };
@@ -56,6 +60,15 @@
 		1450E08A1E6DA5ED00AB91FF /* imageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageViewController.m; sourceTree = "<group>"; };
 		1450E08D1E6DC47E00AB91FF /* TableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTableViewController.h; sourceTree = "<group>"; };
 		1450E08E1E6DC47E00AB91FF /* TableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTableViewController.m; sourceTree = "<group>"; };
+		14CFB6F31E6F344700F624CE /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		14CFB72E1E6F5B1900F624CE /* Photo+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+CoreDataClass.h"; sourceTree = "<group>"; };
+		14CFB7301E6F5B1900F624CE /* Photo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		14CFB7311E6F5B1900F624CE /* Photo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		14CFB7341E70607900F624CE /* Recommendation+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recommendation+CoreDataClass.h"; sourceTree = "<group>"; };
+		14CFB7361E70607900F624CE /* Recommendation+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recommendation+CoreDataProperties.h"; sourceTree = "<group>"; };
+		14CFB7371E70607900F624CE /* Recommendation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recommendation+CoreDataProperties.m"; sourceTree = "<group>"; };
+		14CFB73A1E7060D600F624CE /* Recommendation+operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recommendation+operations.h"; sourceTree = "<group>"; };
+		14CFB73B1E7060D600F624CE /* Recommendation+operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recommendation+operations.m"; sourceTree = "<group>"; };
 		14FEA82F1E607B3800F02393 /* Attributor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attributor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FEA8331E607B3800F02393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14FEA8351E607B3800F02393 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +138,21 @@
 			name = tableview;
 			sourceTree = "<group>";
 		};
+		14CFB6F11E6F342A00F624CE /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				14CFB7341E70607900F624CE /* Recommendation+CoreDataClass.h */,
+				14CFB7361E70607900F624CE /* Recommendation+CoreDataProperties.h */,
+				14CFB7371E70607900F624CE /* Recommendation+CoreDataProperties.m */,
+				14CFB72E1E6F5B1900F624CE /* Photo+CoreDataClass.h */,
+				14CFB7301E6F5B1900F624CE /* Photo+CoreDataProperties.h */,
+				14CFB7311E6F5B1900F624CE /* Photo+CoreDataProperties.m */,
+				14CFB73A1E7060D600F624CE /* Recommendation+operations.h */,
+				14CFB73B1E7060D600F624CE /* Recommendation+operations.m */,
+			);
+			name = coredata;
+			sourceTree = "<group>";
+		};
 		14FEA8261E607B3700F02393 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +176,8 @@
 		14FEA8311E607B3800F02393 /* Attributor */ = {
 			isa = PBXGroup;
 			children = (
+				14CFB6F21E6F344700F624CE /* DataModel.xcdatamodeld */,
+				14CFB6F11E6F342A00F624CE /* coredata */,
 				1450E08C1E6DC46100AB91FF /* tableview */,
 				1450E0851E6D9E6E00AB91FF /* imaginarium */,
 				14FEA8381E607B3800F02393 /* ViewController.h */,
@@ -268,6 +298,7 @@
 				TargetAttributes = {
 					14FEA82E1E607B3800F02393 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					14FEA8471E607B3800F02393 = {
@@ -342,9 +373,13 @@
 				1450E08B1E6DA5ED00AB91FF /* imageViewController.m in Sources */,
 				1450E0841E6A00FC00AB91FF /* ScrollViewController.m in Sources */,
 				14FEA83A1E607B3800F02393 /* ViewController.m in Sources */,
+				14CFB7331E6F5B1900F624CE /* Photo+CoreDataProperties.m in Sources */,
 				14FEA8371E607B3800F02393 /* AppDelegate.m in Sources */,
+				14CFB73C1E7060D600F624CE /* Recommendation+operations.m in Sources */,
 				14FEA8341E607B3800F02393 /* main.m in Sources */,
+				14CFB6F41E6F344700F624CE /* DataModel.xcdatamodeld in Sources */,
 				1450E0811E69C66B00AB91FF /* CustomBehavior.m in Sources */,
+				14CFB7391E70607900F624CE /* Recommendation+CoreDataProperties.m in Sources */,
 				14FEA86A1E67208900F02393 /* StatsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,10 +529,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Attributor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ml.Attributor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Attributor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -505,10 +544,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Attributor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ml.Attributor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Attributor-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -598,6 +640,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		14CFB6F21E6F344700F624CE /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				14CFB6F31E6F344700F624CE /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 14CFB6F31E6F344700F624CE /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 14FEA8271E607B3700F02393 /* Project object */;
 }
