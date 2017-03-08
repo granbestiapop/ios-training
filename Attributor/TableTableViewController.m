@@ -64,25 +64,27 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        id rec = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.managedObjectContext deleteObject:rec];
+        [self.managedObjectContext save:NULL];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
 /*
 // Override to support rearranging the table view.
@@ -125,9 +127,7 @@
 
 - (void) fetchRecommendations
 {
-
     // animation
-    
     [self.refreshControl beginRefreshing];
 
     NSURL *url = [NSURL URLWithString: @"https://frontend.mercadolibre.com/recommendations/users/235789175?client=feedback_congrats&site_id=MLA&category_id=MLA1402&limit=10"];
@@ -143,6 +143,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             // strong
             self.recommendations = [dic valueForKeyPath:@"recommendation_info.recommendations"];
+            [self clearRecommendations];
             [self storeOnLocalDatabase: self.recommendations];
             NSLog(@"%@", self.recommendations);
             [self.refreshControl endRefreshing];
@@ -156,6 +157,11 @@
     for(NSDictionary *r in recommendations){
         [Recommendation store:r:self.managedObjectContext];
     }
+}
+
+- (void) clearRecommendations
+{
+    
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
