@@ -17,6 +17,7 @@
 		14CFB7331E6F5B1900F624CE /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CFB7311E6F5B1900F624CE /* Photo+CoreDataProperties.m */; };
 		14CFB7391E70607900F624CE /* Recommendation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CFB7371E70607900F624CE /* Recommendation+CoreDataProperties.m */; };
 		14CFB73C1E7060D600F624CE /* Recommendation+operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CFB73B1E7060D600F624CE /* Recommendation+operations.m */; };
+		14CFB73F1E7081F600F624CE /* NSManagedObjectContext+logic.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CFB73E1E7081F600F624CE /* NSManagedObjectContext+logic.m */; };
 		14FEA8341E607B3800F02393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8331E607B3800F02393 /* main.m */; };
 		14FEA8371E607B3800F02393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8361E607B3800F02393 /* AppDelegate.m */; };
 		14FEA83A1E607B3800F02393 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEA8391E607B3800F02393 /* ViewController.m */; };
@@ -69,6 +70,8 @@
 		14CFB7371E70607900F624CE /* Recommendation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recommendation+CoreDataProperties.m"; sourceTree = "<group>"; };
 		14CFB73A1E7060D600F624CE /* Recommendation+operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recommendation+operations.h"; sourceTree = "<group>"; };
 		14CFB73B1E7060D600F624CE /* Recommendation+operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recommendation+operations.m"; sourceTree = "<group>"; };
+		14CFB73D1E7081F600F624CE /* NSManagedObjectContext+logic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+logic.h"; sourceTree = "<group>"; };
+		14CFB73E1E7081F600F624CE /* NSManagedObjectContext+logic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+logic.m"; sourceTree = "<group>"; };
 		14FEA82F1E607B3800F02393 /* Attributor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attributor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FEA8331E607B3800F02393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14FEA8351E607B3800F02393 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				14CFB7311E6F5B1900F624CE /* Photo+CoreDataProperties.m */,
 				14CFB73A1E7060D600F624CE /* Recommendation+operations.h */,
 				14CFB73B1E7060D600F624CE /* Recommendation+operations.m */,
+				14CFB73D1E7081F600F624CE /* NSManagedObjectContext+logic.h */,
+				14CFB73E1E7081F600F624CE /* NSManagedObjectContext+logic.m */,
 			);
 			name = coredata;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				14FEA83A1E607B3800F02393 /* ViewController.m in Sources */,
 				14CFB7331E6F5B1900F624CE /* Photo+CoreDataProperties.m in Sources */,
 				14FEA8371E607B3800F02393 /* AppDelegate.m in Sources */,
+				14CFB73F1E7081F600F624CE /* NSManagedObjectContext+logic.m in Sources */,
 				14CFB73C1E7060D600F624CE /* Recommendation+operations.m in Sources */,
 				14FEA8341E607B3800F02393 /* main.m in Sources */,
 				14CFB6F41E6F344700F624CE /* DataModel.xcdatamodeld in Sources */,

@@ -11,6 +11,7 @@
 #import "Recommendation+CoreDataClass.h"
 #import "Recommendation+operations.h"
 #import "AppDelegate.h"
+#import "NSManagedObjectContext+logic.h"
 
 @interface TableTableViewController ()
 @end
@@ -31,8 +32,6 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         exit(-1);  // Fail
     }
-    
-    //[self fetchRecommendations];
 }
 
 
@@ -48,7 +47,6 @@
     [[self.fetchedResultsController sections] objectAtIndex:section];
     NSLog(@"rows %lu", [sectionInfo numberOfObjects]);
     return [sectionInfo numberOfObjects];
-    
 }
 
 
@@ -78,12 +76,17 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        id rec = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [self.managedObjectContext deleteObject:rec];
-        [self.managedObjectContext save:NULL];
+        [self deleteObjectAtIndex:indexPath];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
+}
+
+-(void)deleteObjectAtIndex: (NSIndexPath *) indexPath
+{
+    id rec = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.managedObjectContext deleteObject:rec];
+    [self.managedObjectContext save:NULL];
 }
 
 /*
@@ -120,16 +123,14 @@
 
 - (IBAction)refresh:(UIRefreshControl *)sender
 {
-    //[self.refreshControl beginRefreshing];
     [self fetchRecommendations];
-    
 }
 
 - (void) fetchRecommendations
 {
     // animation
     [self.refreshControl beginRefreshing];
-
+    
     NSURL *url = [NSURL URLWithString: @"https://frontend.mercadolibre.com/recommendations/users/235789175?client=feedback_congrats&site_id=MLA&category_id=MLA1402&limit=10"];
 
     
@@ -143,11 +144,23 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             // strong
             self.recommendations = [dic valueForKeyPath:@"recommendation_info.recommendations"];
-            [self clearRecommendations];
-            [self storeOnLocalDatabase: self.recommendations];
+            // STORE ON DATABASE
+            
+            // whow
+            self.fetchedResultsController.delegate = nil;
+            [self.managedObjectContext deleteAllFromEntity:@"Recommendation"];
+            self.fetchedResultsController.delegate = self;
+            
+            [self.fetchedResultsController performFetch:nil];
+            
+            [self.tableView reloadData];
+            
+            [self.managedObjectContext saveAll:self.recommendations];
+        
             NSLog(@"%@", self.recommendations);
             [self.refreshControl endRefreshing];
         });
+        
     });
 
 }
@@ -159,10 +172,6 @@
     }
 }
 
-- (void) clearRecommendations
-{
-    
-}
 
 - (NSFetchedResultsController *)fetchedResultsController {
     
@@ -251,6 +260,17 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
     [self.tableView endUpdates];
+}
+
+#pragma mark - Lifecycle Events
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"");
+    // clean database
+    //[self.managedObjectContext deleteAllFromEntity:@"Recommendation"];
+    // update database
+    
 }
 
 
