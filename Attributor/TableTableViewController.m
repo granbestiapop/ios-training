@@ -144,18 +144,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             // strong
             self.recommendations = [dic valueForKeyPath:@"recommendation_info.recommendations"];
-            // STORE ON DATABASE
             
-            // whow
-            self.fetchedResultsController.delegate = nil;
-            [self.managedObjectContext deleteAllFromEntity:@"Recommendation"];
-            self.fetchedResultsController.delegate = self;
-            
-            [self.fetchedResultsController performFetch:nil];
-            
-            [self.tableView reloadData];
-            
-            [self.managedObjectContext saveAll:self.recommendations];
+            [self cleanAndStore];
         
             NSLog(@"%@", self.recommendations);
             [self.refreshControl endRefreshing];
@@ -165,11 +155,17 @@
 
 }
 
-- (void) storeOnLocalDatabase: (NSArray *) recommendations
+- (void) cleanAndStore
 {
-    for(NSDictionary *r in recommendations){
-        [Recommendation store:r:self.managedObjectContext];
-    }
+    self.fetchedResultsController.delegate = nil;
+    // perform clean and update
+    [self.managedObjectContext deleteAllFromEntity:@"Recommendation"];
+    [self.managedObjectContext saveAll:self.recommendations];
+    // restore delegate
+    self.fetchedResultsController.delegate = self;
+    // refetch and reload data
+    [self.fetchedResultsController performFetch:nil];
+    [self.tableView reloadData];
 }
 
 
@@ -272,6 +268,5 @@
     // update database
     
 }
-
 
 @end
